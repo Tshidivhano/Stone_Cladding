@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Cladding - Natural Stone Excellence in South Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #4A5D23;
+            --sky-blue: #8CBED6;
+            --granite-grey: #6c757d; /* Slightly adjusted for better contrast */
+            --light-cream: #FAF9F6;
+            --deep-slate: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-cream);
+            color: var(--deep-slate);
+        }
+        
+        .page-section {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-bg {
+            /* === IMAGE REPLACEMENT (Hero Background) === */
+            /* Replace the URL below with your own hero image. Recommended size: 1200x600 pixels or larger. */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--forest-green);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a4a1b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 93, 35, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--light-cream);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-cream);
+            color: var(--deep-slate);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        
+        .nav-link:hover {
+            color: var(--forest-green);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--forest-green);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-slider {
+            overflow: hidden;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        /* Dashed line connector for desktop view */
+        @media (min-width: 768px) {
+            .process-step:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 30px; /* Aligns with the middle of the icon */
+                left: 50%;
+                width: 100%;
+                border-top: 2px dashed var(--sky-blue);
+                z-index: -1;
+            }
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--sky-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover .icon-circle {
+            background-color: var(--forest-green);
+            transform: scale(1.1);
+        }
+        
+        .service-card {
+            border-left: 4px solid var(--sky-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-left-color: var(--forest-green);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .gallery-item img {
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(74, 93, 35, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body class="bg-light-cream">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" onclick="showPage('home')" class="flex items-center gap-3">
+                     <!-- === LOGO REPLACEMENT === -->
+                     <!-- You can replace the icon below with your own logo image -->
+                     <!-- Example: <img src="path/to/your/logo.svg" class="w-12 h-12"> -->
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <img src="images/Logo-1.png" class="w-12 h-12 rounded-full object-cover">
+                    </div>
+                    <h1 class="text-2xl font-bold tracking-tight" style="color: var(--deep-slate);">Stone Cladding</h1>
+                </a>
+                
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                    <a href="#" class="nav-link" data-page="about">About</a>
+                    <a href="#" class="nav-link" data-page="services">Services</a>
+                    <a href="#" class="nav-link" data-page="contact">Contact</a>
+                    <button class="btn-primary text-white px-5 py-2 rounded-full font-medium" onclick="showPage('contact')">Get a Free Quote</button>
+                </nav>
+                
+                <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="nav-link text-center" data-page="home">Home</a>
+                    <a href="#" class="nav-link text-center" data-page="about">About</a>
+                    <a href="#" class="nav-link text-center" data-page="services">Services</a>
+                    <a href="#" class="nav-link text-center" data-page="contact">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2 rounded-full font-medium w-full mt-2" onclick="showPage('contact')">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Homepage -->
+        <div id="home" class="page-section">
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-24 sm:py-32">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">Natural Stone Elegance</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-in-up">Beautiful. Strong. Timeless. The premier choice for stone cladding in South Africa.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="showPage('contact')">Get a Quote</button>
+                        <button class="btn-secondary text-white px-8 py-3 rounded-full font-semibold text-lg">View Gallery</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="py-16 lg:py-24">
+                <div class="container mx-auto px-4">
+                    <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--deep-slate);">Why Choose Us</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center card-hover bg-white p-8 rounded-lg shadow-sm">
+                            <div class="icon-circle"><i class="fas fa-shield-alt text-white text-2xl"></i></div>
+                            <h4 class="text-xl font-semibold mb-3" style="color: var(--deep-slate);">Durable & Waterproof</h4>
+                            <p style="color: var(--granite-grey);">Our stone solutions withstand harsh weather, offering superior protection and longevity.</p>
+                        </div>
+                        <div class="text-center card-hover bg-white p-8 rounded-lg shadow-sm">
+                            <div class="icon-circle"><i class="fas fa-leaf text-white text-2xl"></i></div>
+                            <h4 class="text-xl font-semibold mb-3" style="color: var(--deep-slate);">Natural Aesthetic</h4>
+                            <p style="color: var(--granite-grey);">The timeless beauty of natural stone complements any architectural style.</p>
+                        </div>
+                        <div class="text-center card-hover bg-white p-8 rounded-lg shadow-sm">
+                            <div class="icon-circle"><i class="fas fa-dollar-sign text-white text-2xl"></i></div>
+                            <h4 class="text-xl font-semibold mb-3" style="color: var(--deep-slate);">Affordable Excellence</h4>
+                            <p style="color: var(--granite-grey);">Quality stonework at competitive prices, with flexible options to suit your budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Promotions -->
+            <section class="py-16 lg:py-20" style="background-color: var(--forest-green); color: white;">
+                <div class="container mx-auto px-4 text-center">
+                    <h3 class="text-3xl font-bold mb-4">Exclusive Stonework Specials</h3>
+                    <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Featuring exclusive specials on our most popular services, including dry stacking for long-lasting, cement-free solutions!</p>
+                    <button class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300">View Our Work</button>
+                </div>
+            </section>
+
+            <!-- Portfolio Grid -->
+            <section class="py-16 lg:py-24">
+                <div class="container mx-auto px-4">
+                    <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--deep-slate);">Recent Work</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- === IMAGE REPLACEMENT (Portfolio Item 1) === -->
+                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <a href="#" class="gallery-item aspect-square group">
+                            <img src="images/Feature-Wall.jpg" alt="Feature Wall" class="w-full h-full object-cover">
+                            <div class="gallery-overlay"><h4 class="font-semibold">Feature Wall</h4></div>
+                        </a>
+                        <!-- === IMAGE REPLACEMENT (Portfolio Item 2) === -->
+                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <a href="#" class="gallery-item aspect-square group">
+                            <img src="images/Garden-Wall.jpg" alt="Garden Wall" class="w-full h-full object-cover">
+                            <div class="gallery-overlay"><h4 class="font-semibold">Garden Wall</h4></div>
+                        </a>
+                        <!-- === IMAGE REPLACEMENT (Portfolio Item 3) === -->
+                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <a href="#" class="gallery-item aspect-square group">
+                            <img src="images/House-Cladding.JPG" alt="House Cladding" class="w-full h-full object-cover">
+                            <div class="gallery-overlay"><h4 class="font-semibold">House Cladding</h4></div>
+                        </a>
+                        <!-- === IMAGE REPLACEMENT (Portfolio Item 4) === -->
+                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <a href="#" class="gallery-item aspect-square group">
+                            <img src="images/Gate-Entrance.jpg" alt="Gate Entrance" class="w-full h-full object-cover">
+                            <div class="gallery-overlay"><h4 class="font-semibold">Gate Entrance</h4></div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="py-16 lg:py-24 bg-white">
+                <div class="container mx-auto px-4">
+                    <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--deep-slate);">What Our Clients Say</h3>
+                    <div class="testimonial-slider max-w-4xl mx-auto">
+                        <div class="testimonial-track" id="testimonialTrack">
+                            <!-- Testimonial 1 -->
+                            <div class="w-full flex-shrink-0 text-center px-4">
+                                <div class="bg-gray-50 p-8 rounded-lg">
+                                    <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
+                                    <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Exceptional work! The stone cladding transformed our home completely. Professional service from start to finish."</p>
+                                    <div class="flex items-center justify-center">
+                                        <!-- === IMAGE REPLACEMENT (Testimonial 1) === -->
+                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
+                                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="Sarah Mitchell">
+                                        <div>
+                                            <h5 class="font-semibold">Sarah Mitchell</h5>
+                                            <p class="text-sm" style="color: var(--granite-grey);">Durban Homeowner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="w-full flex-shrink-0 text-center px-4">
+                                <div class="bg-gray-50 p-8 rounded-lg">
+                                    <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
+                                    <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Outstanding craftsmanship and attention to detail. The retaining wall has been perfect for over two years now."</p>
+                                    <div class="flex items-center justify-center">
+                                         <!-- === IMAGE REPLACEMENT (Testimonial 2) === -->
+                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
+                                        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="John Pretorius">
+                                        <div>
+                                            <h5 class="font-semibold">John Pretorius</h5>
+                                            <p class="text-sm" style="color: var(--granite-grey);">Commercial Client</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="w-full flex-shrink-0 text-center px-4">
+                                <div class="bg-gray-50 p-8 rounded-lg">
+                                    <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
+                                    <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Affordable prices without compromising on quality. The garden walls exceeded our expectations."</p>
+                                    <div class="flex items-center justify-center">
+                                         <!-- === IMAGE REPLACEMENT (Testimonial 3) === -->
+                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
+                                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="Lisa van der Merwe">
+                                        <div>
+                                            <h5 class="font-semibold">Lisa van der Merwe</h5>
+                                            <p class="text-sm" style="color: var(--granite-grey);">Landscape Project</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-6 space-x-3" id="testimonialDots">
+                            <!-- Dots will be generated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Banner -->
+            <section class="py-16 lg:py-20" style="background-color: var(--deep-slate); color: white;">
+                <div class="container mx-auto px-4 text-center">
+                    <h3 class="text-3xl font-bold mb-4">Ready to transform your space?</h3>
+                    <p class="text-lg opacity-80 mb-6">Contact us today for a no-obligation consultation.</p>
+                    <a href="https://wa.me/27697650022" target="_blank" class="inline-block bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i>Message Us on WhatsApp
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Page -->
+        <div id="about" class="page-section">
+            <div class="container mx-auto px-4 py-16 lg:py-24">
+                <section class="mb-16 text-center">
+                    <h2 class="text-4xl font-bold mb-6" style="color: var(--deep-slate);">About Stone Cladding</h2>
+                    <div class="max-w-3xl mx-auto text-lg leading-relaxed" style="color: var(--granite-grey);">
+                        <p class="mb-4">Stone Cladding is a proudly South African company based in Mooi River. We specialize in natural stone construction, with a passion for blending timeless design with structural integrity.</p>
+                        <p>With over 10 years of hands-on experience in the stonework industry, we've become trusted providers for residential, commercial, and hospitality projects across the nation.</p>
+                    </div>
+                </section>
+
+                <section class="mb-16 bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--deep-slate);">Our Mission</h3>
+                    <p class="text-lg leading-relaxed" style="color: var(--granite-grey);">To enhance the built environment using nature's finest materials. We strive to deliver excellent workmanship, promote sustainable practices, and help our clients fall in love with their spaces all over again.</p>
+                </section>
+
+                <section class="mb-16">
+                    <h3 class="text-3xl font-bold mb-12 text-center" style="color: var(--deep-slate);">Our Process</h3>
+                    <div class="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+                        <div class="process-step text-center"><div class="icon-circle"><i class="fas fa-search text-white text-2xl"></i></div><h4 class="font-semibold mb-2" style="color: var(--deep-slate);">1. Site Visit</h4><p class="text-sm" style="color: var(--granite-grey);">Comprehensive assessment</p></div>
+                        <div class="process-step text-center"><div class="icon-circle"><i class="fas fa-drafting-compass text-white text-2xl"></i></div><h4 class="font-semibold mb-2" style="color: var(--deep-slate);">2. Planning</h4><p class="text-sm" style="color: var(--granite-grey);">Detailed design phase</p></div>
+                        <div class="process-step text-center"><div class="icon-circle"><i class="fas fa-file-invoice-dollar text-white text-2xl"></i></div><h4 class="font-semibold mb-2" style="color: var(--deep-slate);">3. Quote</h4><p class="text-sm" style="color: var(--granite-grey);">Transparent pricing</p></div>
+                        <div class="process-step text-center"><div class="icon-circle"><i class="fas fa-hammer text-white text-2xl"></i></div><h4 class="font-semibold mb-2" style="color: var(--deep-slate);">4. Build</h4><p class="text-sm" style="color: var(--granite-grey);">Expert construction</p></div>
+                        <div class="process-step text-center"><div class="icon-circle"><i class="fas fa-check-circle text-white text-2xl"></i></div><h4 class="font-semibold mb-2" style="color: var(--deep-slate);">5. Handover</h4><p class="text-sm" style="color: var(--granite-grey);">Quality guaranteed</p></div>
+                    </div>
+                </section>
+                
+                 <!-- Sustainability -->
+                <section class="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                         <i class="fas fa-leaf text-5xl" style="color: var(--forest-green);"></i>
+                        <div>
+                             <h3 class="text-2xl font-bold" style="color: var(--deep-slate);">Sustainability Commitment</h3>
+                             <p class="text-lg leading-relaxed mt-2" style="color: var(--granite-grey);">Our dry-stacking methods reduce cement use and carbon impact. We believe in preserving nature while building with it.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page-section">
+            <div class="container mx-auto px-4 py-16 lg:py-24">
+                <h2 class="text-4xl font-bold mb-16 text-center" style="color: var(--deep-slate);">Our Services</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-truck text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">Fix & Supply</h3></div><p class="mb-4" style="color: var(--granite-grey);">Comprehensive sourcing, delivery, and expert installation.</p></div>
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-seedling text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">Garden Walls</h3></div><p class="mb-4" style="color: var(--granite-grey);">Elegant and structured stone garden walls for any landscape.</p></div>
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-layer-group text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">Retaining Walls</h3></div><p class="mb-4" style="color: var(--granite-grey);">Strong, durable retaining walls built using dry stack techniques.</p></div>
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-home text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">House Cladding</h3></div><p class="mb-4" style="color: var(--granite-grey);">Protect and beautify your home's exterior with timeless stone.</p></div>
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-door-open text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">Gate Entrances</h3></div><p class="mb-4" style="color: var(--granite-grey);">Add character and strength to gate pillars and entranceways.</p></div>
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm"><div class="flex items-center mb-4"><i class="fas fa-broom text-2xl mr-4" style="color: var(--sky-blue);"></i><h3 class="text-xl font-bold" style="color: var(--deep-slate);">Cleaning & Restoration</h3></div><p class="mb-4" style="color: var(--granite-grey);">We restore old stonework to its natural, original beauty.</p></div>
+                </div>
+                <div class="text-center mt-16">
+                    <p class="text-lg mb-6" style="color: var(--granite-grey);">Need help choosing a finish? Let us guide you through the options.</p>
+                    <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="showPage('contact')">Get a Custom Quote</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page-section">
+            <div class="container mx-auto px-4 py-16 lg:py-24">
+                <h2 class="text-4xl font-bold mb-16 text-center" style="color: var(--deep-slate);">Contact Us</h2>
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--deep-slate);">Get In Touch</h3>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium mb-2" style="color: var(--deep-slate);">Name</label>
+                                <input id="name" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue-300" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-2" style="color: var(--deep-slate);">Email</label>
+                                <input id="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue-300" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-medium mb-2" style="color: var(--deep-slate);">Phone</label>
+                                <input id="phone" type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue-300">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-sm font-medium mb-2" style="color: var(--deep-slate);">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue-300" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary text-white font-semibold px-8 py-3 rounded-full w-full">Send Message</button>
+                            <div id="form-message" class="mt-4 text-center"></div>
+                        </form>
+                    </div>
+                    <!-- Contact Info & Map -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                             <h3 class="text-2xl font-bold mb-6" style="color: var(--deep-slate);">Contact Information</h3>
+                             <div class="space-y-4">
+                                 <div class="flex items-start gap-4"><i class="fas fa-phone text-xl mt-1" style="color: var(--sky-blue);"></i><div><p class="font-semibold" style="color: var(--deep-slate);">Primary Cell</p><a href="tel:+27655850441" class="text-gray-600 hover:text-forest-green">065 585 0441</a></div></div>
+                                 <div class="flex items-start gap-4"><i class="fab fa-whatsapp text-xl mt-1" style="color: var(--sky-blue);"></i><div><p class="font-semibold" style="color: var(--deep-slate);">WhatsApp</p><a href="https://wa.me/27697650022" target="_blank" class="text-gray-600 hover:text-forest-green">069 765 0022</a></div></div>
+                                 <div class="flex items-start gap-4"><i class="fas fa-envelope text-xl mt-1" style="color: var(--sky-blue);"></i><div><p class="font-semibold" style="color: var(--deep-slate);">Email</p><a href="mailto:claddingnaturalstone@gmail.com" class="text-gray-600 hover:text-forest-green">claddingnaturalstone@gmail.com</a></div></div>
+                                 <div class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-xl mt-1" style="color: var(--sky-blue);"></i><div><p class="font-semibold" style="color: var(--deep-slate);">Address</p><p class="text-gray-600">Mooi River, KwaZulu-Natal, South Africa</p></div></div>
+                             </div>
+                        </div>
+                        <div class="rounded-lg shadow-md overflow-hidden">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55688.16912384731!2d29.96783935298539!3d-29.21338006806507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef1153748c9502b%3A0x11ce7157833a681d!2sMooi%20River!5e0!3m2!1sen!2sza!4v1718306899123!5m2!1sen!2sza" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--deep-slate); color: var(--light-cream);">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start mb-4 gap-3">
+                         <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center"><i class="fas fa-gem text-xl" style="color: var(--sky-blue);"></i></div>
+                         <h3 class="text-2xl font-bold">Stone Cladding</h3>
+                    </div>
+                    <p class="text-gray-400">Timeless natural stone construction across South Africa.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-300 hover:text-white transition-colors" onclick="showPage('home')">Home</a>
+                        <a href="#" class="block text-gray-300 hover:text-white transition-colors" onclick="showPage('about')">About Us</a>
+                        <a href="#" class="block text-gray-300 hover:text-white transition-colors" onclick="showPage('services')">Services</a>
+                        <a href="#" class="block text-gray-300 hover:text-white transition-colors" onclick="showPage('contact')">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                     <!-- Add social media links here when available -->
+                    <div class="flex justify-center md:justify-start space-x-4 text-2xl">
+                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>Copyright © 2025 Stone Cladding. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const contactForm = document.getElementById('contactForm');
+            
+            // --- Page Navigation ---
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Show selected page
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+                
+                // Update nav link states
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                
+                // Close mobile menu
+                mobileMenu.classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Add click listeners to all nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage(link.dataset.page);
+                });
+            });
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Testimonial Slider ---
+            const testimonialTrack = document.getElementById('testimonialTrack');
+            const testimonialDotsContainer = document.getElementById('testimonialDots');
+            const totalSlides = testimonialTrack.children.length;
+            let currentSlide = 0;
+
+            if (totalSlides > 0) {
+                 // Create dots
+                for (let i = 0; i < totalSlides; i++) {
+                    const button = document.createElement('button');
+                    button.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-300');
+                    button.dataset.slide = i;
+                    testimonialDotsContainer.appendChild(button);
+                }
+                const testimonialDots = testimonialDotsContainer.querySelectorAll('button');
+
+                function goToSlide(slideIndex) {
+                    currentSlide = slideIndex;
+                    testimonialTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+                    
+                    // Update dots
+                    testimonialDots.forEach((dot, index) => {
+                        dot.style.backgroundColor = index === slideIndex ? 'var(--forest-green)' : '#d1d5db';
+                    });
+                }
+
+                // Add click events to dots
+                testimonialDots.forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        goToSlide(parseInt(e.target.dataset.slide));
+                    });
+                });
+                
+                // Auto-advance
+                setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    goToSlide(currentSlide);
+                }, 5000);
+
+                // Initialize first slide
+                goToSlide(0);
+            }
+
+            // --- Contact Form Handler ---
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formMessage = document.getElementById('form-message');
+                formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                formMessage.className = 'mt-4 text-center p-3 rounded-lg bg-green-100 text-green-800';
+                
+                this.reset();
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                    formMessage.className = 'mt-4 text-center';
+                }, 5000);
+            });
+            
+            // --- Initialize Page ---
+            showPage('home'); // Show home page by default
+        });
+    </script>
+</body>
+</html>
