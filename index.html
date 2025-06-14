@@ -41,7 +41,7 @@
         .hero-bg {
             /* === IMAGE REPLACEMENT (Hero Background) === */
             /* Replace the URL below with your own hero image. Recommended size: 1200x600 pixels or larger. */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-1.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/hero-1.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -196,9 +196,9 @@
                 <a href="#" onclick="showPage('home')" class="flex items-center gap-3">
                      <!-- === LOGO REPLACEMENT === -->
                      <!-- You can replace the icon below with your own logo image -->
-                     <!-- Example: <img src="path/to/your/logo.svg" class="w-12 h-12"> -->
-                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <img src="images/Logo-1.png" class="w-12 h-12 rounded-full object-cover">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
+                        <!-- Corrected Path -->
+                        <img src="./images/Logo-1.png" class="w-full h-full object-cover" alt="Stone Cladding Logo">
                     </div>
                     <h1 class="text-2xl font-bold tracking-tight" style="color: var(--deep-slate);">Stone Cladding</h1>
                 </a>
@@ -282,28 +282,24 @@
                 <div class="container mx-auto px-4">
                     <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--deep-slate);">Recent Work</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <!-- === IMAGE REPLACEMENT (Portfolio Item 1) === -->
-                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <!-- Corrected Path -->
                         <a href="#" class="gallery-item aspect-square group">
-                            <img src="images/Feature-Wall.jpg" alt="Feature Wall" class="w-full h-full object-cover">
+                            <img src="./images/Feature-Wall.jpg" alt="Feature Wall" class="w-full h-full object-cover">
                             <div class="gallery-overlay"><h4 class="font-semibold">Feature Wall</h4></div>
                         </a>
-                        <!-- === IMAGE REPLACEMENT (Portfolio Item 2) === -->
-                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <!-- Corrected Path -->
                         <a href="#" class="gallery-item aspect-square group">
-                            <img src="images/Garden-Wall.jpg" alt="Garden Wall" class="w-full h-full object-cover">
+                            <img src="./images/Garden-Wall.jpg" alt="Garden Wall" class="w-full h-full object-cover">
                             <div class="gallery-overlay"><h4 class="font-semibold">Garden Wall</h4></div>
                         </a>
-                        <!-- === IMAGE REPLACEMENT (Portfolio Item 3) === -->
-                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <!-- Corrected Path and File Extension Case -->
                         <a href="#" class="gallery-item aspect-square group">
-                            <img src="images/House-Cladding.JPG" alt="House Cladding" class="w-full h-full object-cover">
+                            <img src="./images/House-Cladding.jpg" alt="House Cladding" class="w-full h-full object-cover">
                             <div class="gallery-overlay"><h4 class="font-semibold">House Cladding</h4></div>
                         </a>
-                        <!-- === IMAGE REPLACEMENT (Portfolio Item 4) === -->
-                        <!-- Replace the src below with your own image. Recommended size: 400x400 pixels. -->
+                        <!-- Corrected Path -->
                         <a href="#" class="gallery-item aspect-square group">
-                            <img src="images/Gate-Entrance.jpg" alt="Gate Entrance" class="w-full h-full object-cover">
+                            <img src="./images/Gate-Entrance.jpg" alt="Gate Entrance" class="w-full h-full object-cover">
                             <div class="gallery-overlay"><h4 class="font-semibold">Gate Entrance</h4></div>
                         </a>
                     </div>
@@ -316,14 +312,12 @@
                     <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--deep-slate);">What Our Clients Say</h3>
                     <div class="testimonial-slider max-w-4xl mx-auto">
                         <div class="testimonial-track" id="testimonialTrack">
-                            <!-- Testimonial 1 -->
+                            <!-- Testimonial 1 (No changes needed, loads from web) -->
                             <div class="w-full flex-shrink-0 text-center px-4">
                                 <div class="bg-gray-50 p-8 rounded-lg">
                                     <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
                                     <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Exceptional work! The stone cladding transformed our home completely. Professional service from start to finish."</p>
                                     <div class="flex items-center justify-center">
-                                        <!-- === IMAGE REPLACEMENT (Testimonial 1) === -->
-                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
                                         <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="Sarah Mitchell">
                                         <div>
                                             <h5 class="font-semibold">Sarah Mitchell</h5>
@@ -332,14 +326,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Testimonial 2 -->
+                            <!-- Testimonial 2 (No changes needed, loads from web) -->
                             <div class="w-full flex-shrink-0 text-center px-4">
                                 <div class="bg-gray-50 p-8 rounded-lg">
                                     <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
                                     <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Outstanding craftsmanship and attention to detail. The retaining wall has been perfect for over two years now."</p>
                                     <div class="flex items-center justify-center">
-                                         <!-- === IMAGE REPLACEMENT (Testimonial 2) === -->
-                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
                                         <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="John Pretorius">
                                         <div>
                                             <h5 class="font-semibold">John Pretorius</h5>
@@ -348,14 +340,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Testimonial 3 -->
+                            <!-- Testimonial 3 (No changes needed, loads from web) -->
                             <div class="w-full flex-shrink-0 text-center px-4">
                                 <div class="bg-gray-50 p-8 rounded-lg">
                                     <i class="fas fa-quote-left text-3xl mb-4" style="color: var(--sky-blue);"></i>
                                     <p class="text-lg mb-6 italic" style="color: var(--granite-grey);">"Affordable prices without compromising on quality. The garden walls exceeded our expectations."</p>
                                     <div class="flex items-center justify-center">
-                                         <!-- === IMAGE REPLACEMENT (Testimonial 3) === -->
-                                        <!-- Replace the src below with your client's photo. Recommended size: 48x48 pixels. -->
                                         <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=160" class="w-12 h-12 rounded-full mr-4 object-cover" alt="Lisa van der Merwe">
                                         <div>
                                             <h5 class="font-semibold">Lisa van der Merwe</h5>
@@ -498,7 +488,7 @@
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
                 <div>
                     <div class="flex items-center justify-center md:justify-start mb-4 gap-3">
-                         <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center"><i class="fas fa-gem text-xl" style="color: var(--sky-blue);"></i></div>
+                         <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center"><i class="fas fa-gem text-xl" style="color: var(--sky-blue);"></i></div>
                          <h3 class="text-2xl font-bold">Stone Cladding</h3>
                     </div>
                     <p class="text-gray-400">Timeless natural stone construction across South Africa.</p>
